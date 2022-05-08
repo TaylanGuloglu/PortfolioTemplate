@@ -1,0 +1,76 @@
+    <%- include('partials/_header') %>
+    <%- include('partials/_navigation') %>
+    <br></br>
+    <br></br>
+    
+
+	<section class="page-section portfolio" id="portfolio">
+	<div class="container">
+    	<div id="overviews" class="section wb">
+        <div class="container">
+            <div class="row"> 
+                <div class="col-lg-9 blog-post-single">
+                    <div class="blog-item">
+						<div class="image-blog">
+							<img src="/assets/img/portfolio" alt="" class="img-fluid">
+						</div>
+						<div class="post-content">
+
+                            <div class="project">
+								<h1><%= project.name %></h1>
+                                <br></br>
+                                <h3><%= project.description %></h3>
+								<br/>
+								<h3>Category: <%= project.category %></h3>
+							</div>
+								<br />
+								<form method="POST" action="/courses/enroll">
+									<input type="hidden" name="course_id" value="<%= project._id %>">
+									<button class="btn btn-lg btn-warning text-white"><span>GITHUB LINK</span></button>
+                                    
+								</form>
+							
+							
+							<div class="meta-info-blog">
+                                <br/>
+								<span><i class="fa fa-calendar"></i> <a><%= project.createdAt %></a> </span>
+							</div>			
+						</div>
+					</div>
+				</div>
+				<div class="tm-bg-gray tm-share-box">
+					<div class="text-center">
+						<a href="/portfolio/edit/<%= project._id %>" class="btn btn-primary p-3.5 mb-2 tm-btn-animate tm-btn-download tm-icon-download"><span>Update</span></a>	
+					</div>	
+					<div class="text-center">
+						<a href="/portfolio/<%= project._id %>?_method=DELETE " class="btn btn-danger p-3.5 mb-2 tm-btn-animate tm-btn-download tm-icon-download"
+							
+							onclick="return confirm('ARE YOU SURE')"><span>Delete</span></a>	
+					</div>								
+				</div>
+			</div>
+		</div>
+	</section>
+	
+    
+	
+	
+	<%- include('partials/_footer') %>
+    
+    <!-- Bootstrap core JS-->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+	<!-- Core theme JS-->
+	<script src="js/scripts.js"></script>
+	<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+	<!-- * *                               SB Forms JS                               * *-->
+	<!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+	<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+	<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    
+
+    
+    
+
+
+</body>
+</html>
